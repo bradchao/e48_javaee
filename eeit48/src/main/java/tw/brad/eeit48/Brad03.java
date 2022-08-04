@@ -22,6 +22,7 @@ public class Brad03 extends HttpServlet {
 			String value = request.getHeader(name);
 			System.out.println(name +" : " +value);
 		}
+		
 	}
 
 }
