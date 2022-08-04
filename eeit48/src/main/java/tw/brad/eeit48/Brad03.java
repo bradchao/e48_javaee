@@ -20,7 +20,7 @@ public class Brad03 extends HttpServlet {
 		while( names.hasMoreElements()) {
 			String name = names.nextElement();
 			String value = request.getHeader(name);
-			System.out.println(name +":" +value);
+			System.out.println(name +": " +value);
 		}
 	}
 
