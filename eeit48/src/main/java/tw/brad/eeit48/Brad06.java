@@ -16,13 +16,27 @@ public class Brad06 extends HttpServlet {
 		String r = "";
 		String x = request.getParameter("x"); 
 		String y = request.getParameter("y"); 
+		String op = request.getParameter("op"); 
 		if (x != null && y != null) {
 			try {
 				int intX = Integer.parseInt(x);
 				int intY = Integer.parseInt(y);
-				int result = intX + intY;
-				r = result + "";
+				int result = 0;
+				switch(op) {
+					case "1":
+						result = intX + intY; r = result + ""; break;
+					case "2":
+						result = intX - intY; r = result + "";  break;
+					case "3":
+						result = intX * intY;  r = result + ""; break;
+					case "4":
+						result = intX / intY;
+						int mod = intX % intY;
+						r = result + "......" + mod; break;
+				}
+				
 			}catch (Exception e) {
+				System.out.println(e.toString());
 			}			
 		}else {
 			x = y = "";
@@ -34,7 +48,12 @@ public class Brad06 extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		out.append("<form action='Brad06'>")
 			.append("<input name='x' value='" + x + "' >")
-			.append("+")
+			.append("<select name='op'>")
+			.append("<option value='1'>+</option>")
+			.append("<option value='2'>-</option>")
+			.append("<option value='3'>x</option>")
+			.append("<option value='4'>/</option>")
+			.append("</select>")
 			.append("<input name='y' value ='" + y + "'>\n")
 			.append("<input type='submit' value='=' />")
 			.append("<span>"  +  r +"</span>")
