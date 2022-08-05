@@ -17,7 +17,14 @@ public class Brad07 extends HttpServlet {
 		
 		String account = request.getParameter("account");
 		String passwd = request.getParameter("passwd");
-		System.out.println(account + ":" + passwd);
+		String gender = request.getParameter("gender");
+		
+		String[] hobbys = request.getParameterValues("hobby");
+		
+		System.out.println(account + ":" + passwd + ":" + gender);
+		for (String hobby : hobbys) {
+			System.out.println(hobby);
+		}
 	}
 
 	@Override
