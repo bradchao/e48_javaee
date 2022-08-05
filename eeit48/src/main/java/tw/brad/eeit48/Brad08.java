@@ -15,7 +15,9 @@ import javax.servlet.http.Part;
  * Servlet implementation class Brad08
  */
 @WebServlet("/Brad08")
-@MultipartConfig
+@MultipartConfig(
+		location = "C:\\Users\\USER\\git\\repository5\\eeit48\\src\\main\\webapp\\upload"
+		)
 public class Brad08 extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
@@ -27,9 +29,19 @@ public class Brad08 extends HttpServlet {
 //			System.out.println(type + ":" + name);
 //		}
 		
-		Part part = request.getPart("upload");
-		//System.out.println(part.getSubmittedFileName());
-		part.write("C:\\Users\\USER\\git\\repository5\\eeit48\\src\\main\\webapp\\upload\\brad.jpg");
+		String ip = request.getRemoteAddr();
+		
+//		Part part = request.getPart("upload");
+//		part.write(ip + ".jpg");
+		
+		Collection<Part> parts = request.getParts();
+		for (Part part : parts) {
+			String name = part.getName();
+			if (name.equals("upload")) {
+				System.out.println("OK");
+				//part.get
+			}
+		}
 		
 		
 		
