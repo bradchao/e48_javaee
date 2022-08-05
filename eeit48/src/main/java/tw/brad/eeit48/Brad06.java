@@ -13,14 +13,31 @@ import javax.servlet.http.HttpServletResponse;
 public class Brad06 extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
+		String r = "";
+		String x = request.getParameter("x"); 
+		String y = request.getParameter("y"); 
+		if (x != null && y != null) {
+			try {
+				int intX = Integer.parseInt(x);
+				int intY = Integer.parseInt(y);
+				int result = intX + intY;
+				r = result + "";
+			}catch (Exception e) {
+			}			
+		}else {
+			x = y = "";
+		}
+		
+		
+		//-------------------
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter out = response.getWriter();
 		out.append("<form action='Brad06'>")
-			.append("<input name='x'>")
+			.append("<input name='x' value='" + x + "' >")
 			.append("+")
-			.append("<input name='y'>\n")
+			.append("<input name='y' value ='" + y + "'>\n")
 			.append("<input type='submit' value='=' />")
-			.append("<span></span>")
+			.append("<span>"  +  r +"</span>")
 			.append("</form>");
 	}
 
