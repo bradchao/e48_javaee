@@ -39,14 +39,18 @@ public class Brad05 extends HttpServlet {
 		
 		System.out.println(x +":" + y + ":" + z);
 		
-		int intX = Integer.parseInt(x);
-		int intY = Integer.parseInt(y);
-		int result = intX + intY;
-		
 		//----------------------------
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter out = response.getWriter();
-		out.printf("%d + %d = %d",intX, intY, result);
+		try {
+			int intX = Integer.parseInt(x);
+			int intY = Integer.parseInt(y);
+			int result = intX + intY;
+			out.printf("%d + %d = %d",intX, intY, result);
+		}catch (Exception e) {
+			out.print("Oooop!");
+		}
+		
 		
 		
 		
