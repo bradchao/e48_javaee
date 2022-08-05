@@ -20,12 +20,18 @@ public class Brad08 extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
 		
-		Collection<Part> parts = request.getParts();
-		for (Part part : parts) {
-			String name = part.getName();
-			String type =  part.getContentType();
-			System.out.println(type + ":" + name);
-		}
+//		Collection<Part> parts = request.getParts();
+//		for (Part part : parts) {
+//			String name = part.getName();
+//			String type =  part.getContentType();
+//			System.out.println(type + ":" + name);
+//		}
+		
+		Part part = request.getPart("upload");
+		//System.out.println(part.getSubmittedFileName());
+		part.write("C:\\Users\\USER\\git\\repository5\\eeit48\\src\\main\\webapp\\upload\\brad.jpg");
+		
+		
 		
 	}
 
