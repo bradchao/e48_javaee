@@ -39,25 +39,25 @@ public class Brad06 extends HttpServlet {
 				System.out.println(e.toString());
 			}			
 		}else {
-			x = y = "";
+			x = y = op = "";
 		}
 		
 		
 		//-------------------
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter out = response.getWriter();
-		out.append("<form action='Brad06'>")
-			.append("<input name='x' value='" + x + "' >")
-			.append("<select name='op'>")
-			.append("<option value='1'>+</option>")
-			.append("<option value='2'>-</option>")
-			.append("<option value='3'>x</option>")
-			.append("<option value='4'>/</option>")
-			.append("</select>")
+		out.append("<form action='Brad06'>\n")
+			.append("<input name='x' value='" + x + "' >\n")
+			.append("<select name='op'>\n")
+			.append("<option value='1' " + (op.equals("1")?"selected":"") + ">+</option>\n")
+			.append("<option value='2' " + (op.equals("2")?"selected":"") + ">-</option>\n")
+			.append("<option value='3' " + (op.equals("3")?"selected":"") + ">x</option>\n")
+			.append("<option value='4' " + (op.equals("4")?"selected":"") + ">/</option>\n")
+			.append("</select>\n")
 			.append("<input name='y' value ='" + y + "'>\n")
-			.append("<input type='submit' value='=' />")
-			.append("<span>"  +  r +"</span>")
-			.append("</form>");
+			.append("<input type='submit' value='=' />\n")
+			.append("<span>"  +  r +"</span>\n")
+			.append("</form>\n");
 	}
 
 }
