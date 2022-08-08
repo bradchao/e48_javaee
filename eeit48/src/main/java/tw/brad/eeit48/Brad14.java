@@ -18,11 +18,18 @@ public class Brad14 extends HttpServlet {
 		
 		String x = request.getParameter("x");
 		String y = request.getParameter("y");
-		int result = (Integer)request.getAttribute("result");
+		String v = (String)request.getAttribute("view");
+		int r = (Integer)request.getAttribute("result");
+		String result;
+		if (x != null && y!= null) {
+			result = r + "";
+		}else {
+			x = y = result = "";
+		}
 		
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter out = response.getWriter();
-		String view = BradUtils.loadView();
+		String view = BradUtils.loadView(v);
 		out.print(String.format(view, x, y, result));
 		response.flushBuffer();
 	}

@@ -5,9 +5,12 @@ import java.io.File;
 import java.io.FileReader;
 
 public class BradUtils {
-	public static String loadView() {
+	public static String loadView(String view) {
 		// 
-		File source = new File("C:\\Users\\USER\\git\\repository5\\eeit48\\src\\main\\webapp\\views\\view1.html");
+		String viewFile = 
+			String.format("C:\\Users\\USER\\git\\repository5\\eeit48\\src\\main\\webapp\\views\\%s.html", 
+					view);
+		File source = new File(viewFile);
 		StringBuffer sb = new StringBuffer();
 		try(
 			FileReader fin = new FileReader(source);

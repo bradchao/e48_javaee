@@ -27,9 +27,11 @@ public class Brad12 extends HttpServlet {
 		int result =  model.add();
 		System.out.println(result);
 		request.setAttribute("result", result);
+		request.setAttribute("view", "view2");
 		
 		// 3. 呈現 View
-		RequestDispatcher dispatcher = request.getRequestDispatcher("Brad14");
+		RequestDispatcher dispatcher = 
+				request.getRequestDispatcher("Brad14");
 		dispatcher.forward(request, response);
 		
 		
