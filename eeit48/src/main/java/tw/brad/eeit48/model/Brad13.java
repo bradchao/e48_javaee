@@ -1,4 +1,4 @@
-package tw.brad.eeit48;
+package tw.brad.eeit48.model;
 
 public class Brad13 {
 	private int x, y;
