@@ -2,6 +2,7 @@ package tw.brad.eeit48;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -25,8 +26,11 @@ public class Brad12 extends HttpServlet {
 		Brad13 model = new Brad13(x, y);
 		int result =  model.add();
 		System.out.println(result);
+		request.setAttribute("result", result);
 		
 		// 3. 呈現 View
+		RequestDispatcher dispatcher = request.getRequestDispatcher("Brad14");
+		dispatcher.forward(request, response);
 		
 		
 	}
