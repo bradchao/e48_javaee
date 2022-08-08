@@ -21,10 +21,11 @@ public class Brad12 extends HttpServlet {
 		// 1. 接收參數
 		String x = request.getParameter("x");
 		String y = request.getParameter("y");
+		String op = request.getParameter("op");
 		
 		// 2. 演算法 Model
-		Brad13 model = new Brad13(x, y);
-		int result =  model.add();
+		Brad13 model = new Brad13(x, y, op);
+		double result =  model.operator();
 		System.out.println(result);
 		request.setAttribute("result", result);
 		request.setAttribute("view", "view2");

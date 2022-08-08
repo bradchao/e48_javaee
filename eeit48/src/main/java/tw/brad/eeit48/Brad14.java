@@ -19,7 +19,7 @@ public class Brad14 extends HttpServlet {
 		String x = request.getParameter("x");
 		String y = request.getParameter("y");
 		String v = (String)request.getAttribute("view");
-		int r = (Integer)request.getAttribute("result");
+		double r = (Double)request.getAttribute("result");
 		String result;
 		if (x != null && y!= null) {
 			result = r + "";
