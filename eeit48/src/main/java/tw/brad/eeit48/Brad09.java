@@ -3,6 +3,7 @@ package tw.brad.eeit48;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -15,6 +16,8 @@ public class Brad09 extends HttpServlet {
 			throws ServletException, IOException {
 		
 		request.setCharacterEncoding("UTF-8");
+		RequestDispatcher dispatcher = 
+				request.getRequestDispatcher("brad09.html");
 		
 		
 		//-------------------
@@ -22,7 +25,12 @@ public class Brad09 extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		out.print("<h1>Brad Big Company</h1>");
 		out.print("<hr />");
-		out.print("Hello, World");
+		out.print("Hello, World<br />");
+		
+		dispatcher.include(request, response);
+		
+		out.print("<hr />");
+		out.print("Copyleft");
 		
 		response.flushBuffer();
 	}
