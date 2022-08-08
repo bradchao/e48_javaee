@@ -10,14 +10,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/Brad09")
-public class Brad09 extends HttpServlet {
+/**
+ * Servlet implementation class Brad11
+ */
+@WebServlet("/Brad11")
+public class Brad11 extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
 		
 		request.setCharacterEncoding("UTF-8");
-//		RequestDispatcher dispatcher = 
-//				request.getRequestDispatcher("brad09.html");
 		RequestDispatcher dispatcher = 
 				request.getRequestDispatcher("Brad10");
 		
@@ -31,7 +32,8 @@ public class Brad09 extends HttpServlet {
 		out.print("<hr />");
 		out.print("Hello, World<br />");
 		
-		dispatcher.include(request, response);
+		//dispatcher.include(request, response);
+		dispatcher.forward(request, response);
 		
 		out.print("<hr />");
 		out.print("Copyleft");
