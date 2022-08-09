@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%
+	String start = request.getParameter("start");
+	String row = request.getParameter("row");
+	String col = request.getParameter("col");
+%>    
 <!DOCTYPE html>
 <html>
 	<head>
@@ -9,9 +14,14 @@
 	<body>
 		<table border="1" width="100%">
 			<%
-				int ROW = 3;
-				int START = 1;
-				int COL = 3;
+				int ROW = 2;
+				int START = 2;
+				int COL = 4;
+				
+				if (start != null) START = Integer.parseInt(start);
+				if (row != null) ROW = Integer.parseInt(row);
+				if (col != null) COL = Integer.parseInt(col);
+				
 				
 				for (int k=0; k<ROW; k++){
 					out.print("<tr>");
