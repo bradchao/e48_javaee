@@ -37,18 +37,24 @@ public class Brad19 extends HttpServlet {
     }
 
     @Override
-    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void service(HttpServletRequest req, HttpServletResponse resp) 
+    		throws ServletException, IOException {
+    	req.setCharacterEncoding("UTF-8");
+    	resp.setContentType("text/html; charset=UTF-8");
+    	
     	String account = req.getParameter("account");
     	String passwd = req.getParameter("passwd");
     	int status = checkAccount(account, passwd);
     	switch(status) {
 	    	case CHECK_OK:
+	    		resp.sendRedirect("brad20.html");
 	    		break;
 	    	case CHECK_ACCOUNT_ERROR:
-	    		break;
 	    	case CHECK_PASSWD_ERROR:
+	    		resp.sendRedirect("brad19.html");
 	    		break;
 	    	case CHECK_EXCEPTION:
+	    		resp.sendError(500, "Server Busy");
 	    		break;
     	}
     	super.service(req, resp);
