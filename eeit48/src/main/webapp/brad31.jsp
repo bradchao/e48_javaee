@@ -8,44 +8,31 @@
 	</head>
 	<body>
 		<table border="1" width="100%">
-			<tr>
-				<%
-					for (int j=2; j<6; j++){
-						out.print("<td>");
+			<%
+				int ROW = 3;
+				int START = 1;
+				int COL = 3;
+				
+				for (int k=0; k<ROW; k++){
+					out.print("<tr>");
+					for (int j=START; j<(START+COL); j++){
+						int newj = j + k*COL;
+						
+						if ((j+k) % 2 == 0){
+							out.print("<td bgcolor='yellow'>");
+						}else{
+							out.print("<td bgcolor='pink'>");
+						}
+						
 						for (int i=1; i<=9; i++){
-							int r = j * i;
-							out.println(String.format("%d x %d = %d<br />", j, i, r));
+							int r = newj * i;
+							out.println(String.format("%d x %d = %d<br />", newj, i, r));
 						}
 						out.print("</td>");
 					}
-				%>
-			</tr>
-			<tr>
-				<td>
-					2 x 1 = 2<br />
-					2 x 1 = 2<br />
-					2 x 1 = 2<br />
-					2 x 1 = 2<br />
-				</td>
-				<td>
-					2 x 1 = 2<br />
-					2 x 1 = 2<br />
-					2 x 1 = 2<br />
-					2 x 1 = 2<br />
-				</td>
-				<td>
-					2 x 1 = 2<br />
-					2 x 1 = 2<br />
-					2 x 1 = 2<br />
-					2 x 1 = 2<br />
-				</td>
-				<td>
-					2 x 1 = 2<br />
-					2 x 1 = 2<br />
-					2 x 1 = 2<br />
-					2 x 1 = 2<br />
-				</td>
-			</tr>
-		</table>
+					out.print("</tr>");
+				}
+			%>
+</table>
 	</body>
 </html>
