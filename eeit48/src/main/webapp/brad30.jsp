@@ -16,5 +16,10 @@
 		int lottery = (int)(Math.random()*49+1);
 		out.println(lottery);
 	%>
+	<hr />
+	<% out.println(lottery); %><br />
+	<%= lottery %><br />
+	
+	
 	</body>
 </html>
