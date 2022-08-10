@@ -17,11 +17,13 @@ public class Brad10 extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String x = request.getParameter("x");
+		String y = request.getParameter("y");
 		String key1 = (String)request.getAttribute("key1");
 		String key2 = (String)request.getAttribute("key2");
 		
 		PrintWriter out = response.getWriter();
-		out.println("I am Brad10:" + x + "<br />");
+		out.println("I am Brad10: x = " + x + "<br />");
+		out.println("I am Brad10: y = " + y + "<br />");
 		out.println(key1 + "<br />");
 		out.println(key2 + "<br />");
 	}

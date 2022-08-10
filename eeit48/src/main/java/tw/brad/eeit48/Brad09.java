@@ -19,7 +19,7 @@ public class Brad09 extends HttpServlet {
 //		RequestDispatcher dispatcher = 
 //				request.getRequestDispatcher("brad09.html");
 		RequestDispatcher dispatcher = 
-				request.getRequestDispatcher("Brad10");
+				request.getRequestDispatcher("Brad10?y=97");
 		
 		request.setAttribute("key1", "value1");
 		request.setAttribute("key2", "value2");
