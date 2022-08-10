@@ -34,7 +34,15 @@ public class BradUtils {
 	}
 	
 	public static String plus(String x, String y) {
-		return "";
+		int r;
+		try {
+			int intX = Integer.parseInt(x);
+			int intY = Integer.parseInt(y);
+			r = intX + intY;
+			return r + "";
+		}catch(Exception e) {
+			return "";
+		}
 	}
 	
 }

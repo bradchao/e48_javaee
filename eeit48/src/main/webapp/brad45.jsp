@@ -14,10 +14,15 @@
 	<form action="brad45.jsp">
 		<input type="text" name="name" value="${param.name }" /><br />
 		<input name="x" value="${param.x }">
-		+
+		<select name="op">
+			<option value="1">+</option>
+			<option value="2">-</option>
+			<option value="3">x</option>
+			<option value="4">/</option>
+		</select>
 		<input name="y" value="${param.y }">
 		<input type="submit" value="=" />
-		<span>${BradUtils.plus(param.x, param.y) }</span>
+		<span>${BradUtils.calc(param.x, param.y, param.op) }</span>
 	</form>	
 	
 	</body>
