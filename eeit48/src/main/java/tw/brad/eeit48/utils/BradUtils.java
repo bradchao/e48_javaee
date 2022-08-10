@@ -28,4 +28,9 @@ public class BradUtils {
 		
 		return sb.toString();
 	}
+	
+	public static String sayYa(String who) {
+		return "Ya, " + who;
+	}
+	
 }
