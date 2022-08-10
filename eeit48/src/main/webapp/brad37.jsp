@@ -4,9 +4,7 @@
 	Object lottery2 = request.getAttribute("lottery");
 %>
 	
-	I am <%= name %><br />
 	I am <%= name2 %><br />
 	x = <%= x %><br />
 	lottery = <%= lottery2 %><br />
-	lottery = <%= lottery %>
 	

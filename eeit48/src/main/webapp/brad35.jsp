@@ -19,5 +19,7 @@
 	<hr />
 	<%@ include file="brad36.jsp" %>
 	<hr />
+	<jsp:include page="brad37.jsp" />
+	<hr />
 	</body>
 </html>
