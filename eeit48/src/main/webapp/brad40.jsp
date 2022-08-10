@@ -26,7 +26,10 @@
 	Member2:
 		<jsp:getProperty property="id" name="member2"/> :
 		<jsp:getProperty property="account" name="member2"/> :
-		<jsp:getProperty property="realname" name="member2"/>	
+		<jsp:getProperty property="realname" name="member2"/>
+	Member2:	
+		<%= member2.getId() %> : <%= member2.getAccount() %> : 
+		<%= member2.getRealname() %><br />
 		 
 	</body>
 </html>

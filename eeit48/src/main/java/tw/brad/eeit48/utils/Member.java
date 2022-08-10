@@ -1,6 +1,8 @@
 package tw.brad.eeit48.utils;
 
-public class Member {
+import java.io.Serializable;
+
+public class Member implements Serializable{
 	private int id;
 	private String account, realname;
 	public int getId() {
