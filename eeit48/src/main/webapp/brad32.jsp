@@ -2,12 +2,20 @@
     pageEncoding="UTF-8"%>
 <%@ page errorPage="brad33.jsp" %>    
 <%
-	String x = request.getParameter("x");
-	String y = request.getParameter("y");
-	
-	int intX = Integer.parseInt(x);
-	int intY = Integer.parseInt(y);
-	int result = intX + intY;
+	String x, y, result;
+	try{
+		x = request.getParameter("x");
+		y = request.getParameter("y");
+		
+		int intX = Integer.parseInt(x);
+		int intY = Integer.parseInt(y);
+		int r = intX + intY;
+		result = r + "";
+	}catch(Exception e){
+		//System.out.println(e.toString());
+		//out.print("Haaaaaaa!");
+		x = ""; y = ""; result = "";
+	}
 	
 %>
 <!DOCTYPE html>
@@ -18,9 +26,9 @@
 	</head>
 	<body>
 		<form>
-			<input name="x">
+			<input name="x" value="<%= x %>">
 			+
-			<input name="y">
+			<input name="y" value="<%= y %>">
 			<input type="submit" value="=" />
 			<span><%= result %></span>
 		</form>	
