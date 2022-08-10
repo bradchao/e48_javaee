@@ -44,5 +44,21 @@ public class BradUtils {
 			return "";
 		}
 	}
+	public static String calc(String x, String y, String op) {
+		int r, m;
+		try {
+			int intX = Integer.parseInt(x);
+			int intY = Integer.parseInt(y);
+			switch(op) {
+				case "1": r = intX + intY; return r + "";
+				case "2": r = intX - intY; return r + "";
+				case "3": r = intX * intY; return r + "";
+				case "4": r = intX / intY; m = intX % intY; return r + "..." + m;
+				default: return "";
+			}
+		}catch(Exception e) {
+			return "";
+		}
+	}
 	
 }
