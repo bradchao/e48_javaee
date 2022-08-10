@@ -7,6 +7,12 @@
 	member1.setAccount("brad");
 	member1.setRealname("Brad Chao");
 %>    
+<jsp:useBean id="member2" class="tw.brad.eeit48.utils.Member">	
+</jsp:useBean>
+<jsp:setProperty property="id" value="2" name="member2"/>
+<jsp:setProperty property="account" value="Alex" name="member2"/>
+<jsp:setProperty property="realname" value="艾力克斯" name="member2"/>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -15,7 +21,12 @@
 	</head>
 	<body>
 	Member1: 
-		<%= member1.getId() %> : <%= member1.getAccount() %> : <%= member1.getRealname() %><br />
+		<%= member1.getId() %> : <%= member1.getAccount() %> : 
+		<%= member1.getRealname() %><br />
+	Member2:
+		<jsp:getProperty property="id" name="member2"/> :
+		<jsp:getProperty property="account" name="member2"/> :
+		<jsp:getProperty property="realname" name="member2"/>	
 		 
 	</body>
 </html>
