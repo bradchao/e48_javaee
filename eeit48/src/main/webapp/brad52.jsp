@@ -8,7 +8,10 @@
 		<title>Brad Big Company</title>
 	</head>
 	<body>
-	
+	<c:set var="x" value="123" /><!-- pageScope x = 123 -->
+	<c:set var="x" value="124" scope="request" />
+	Page: ${x }<br />
+	Request: ${requestScope.x }<br />
 	
 	
 	</body>
