@@ -22,7 +22,9 @@
 	<c:set target="${member }" property="account">Brad</c:set>
 	<c:set target="${member }" property="realname">Brad Chao</c:set>
 	${member.id } : ${member.account } : ${member.realname }<br />
-	${member }
+	${member }<br />
+	<c:remove var="member"/>
+	${member }<br />
 	
 	</body>
 </html>
