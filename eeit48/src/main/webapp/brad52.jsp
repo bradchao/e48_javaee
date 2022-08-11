@@ -12,6 +12,10 @@
 	<c:set var="x" value="124" scope="request" />
 	Page: ${x }<br />
 	Request: ${requestScope.x }<br />
+	<c:out value="Hello, World" /><br />
+	<%= "Hello, World<br />" %>
+	<c:out value="${x }" /><br />
+	<c:out value="${param.y }" default="novalue" /><br />
 	
 	
 	</body>
