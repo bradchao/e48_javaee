@@ -17,6 +17,12 @@
 	<c:out value="${x }" /><br />
 	<c:out value="${param.y }" default="novalue" /><br />
 	
+	<jsp:useBean id="member" class="tw.brad.eeit48.utils.Member"></jsp:useBean>
+	<c:set target="${member }" property="id">1122</c:set>
+	<c:set target="${member }" property="account">Brad</c:set>
+	<c:set target="${member }" property="realname">Brad Chao</c:set>
+	${member.id } : ${member.account } : ${member.realname }<br />
+	${member }
 	
 	</body>
 </html>
