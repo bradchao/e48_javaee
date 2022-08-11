@@ -20,6 +20,10 @@
 	Method: ${pageContext.request.method }<br />
 	ip : <%= request.getRemoteAddr() %><br />
 	ip : ${pageContext.request.remoteAddr }<br />
+	Locale : <%= request.getLocale() %><br />
+	Locale : ${pageContext.request.locale }<br />
+	Language : <%= request.getLocale().getDisplayLanguage() %><br />
+	Language : ${pageContext.request.locale.displayLanguage }<br />
 	
 	</body>
 </html>
