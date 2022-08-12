@@ -13,6 +13,11 @@
 	SELECT * FROM souvenir
 </sql:query>	
 
+<c:set var="rpp" value="10" />
+<c:set var="pages" value="${rs.rowCount % rpp == 0?rs.rowCount / rpp : (rs.rowCount - (rs.rowCount % rpp)) / rpp + 1 }" />
+${pages }
+
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -26,6 +31,7 @@
 			<th>Name</th>
 			<th>Tel</th>
 			<th>Address</th>
+			<th>Image</th>
 		</tr>
 		<c:forEach items="${rs.rows }" var="row">
 			<tr>
@@ -33,6 +39,7 @@
 				<td>${row.sname }</td>
 				<td>${row.tel }</td>
 				<td>${row.addr }</td>
+				<td><img src='${row.picurl }' width='100px' height='60px'></td>
 			</tr>
 		</c:forEach>
 	</table>
