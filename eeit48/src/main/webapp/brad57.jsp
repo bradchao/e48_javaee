@@ -20,6 +20,23 @@
 		<title>Brad Big Company</title>
 	</head>
 	<body>
+	<table border="1" width="100%">
+		<tr>
+			<th>ID #</th>
+			<th>Name</th>
+			<th>Tel</th>
+			<th>Address</th>
+		</tr>
+		<c:forEach items="${rs.rows }" var="row">
+			<tr>
+				<td>${row.id }</td>
+				<td>${row.sname }</td>
+				<td>${row.tel }</td>
+				<td>${row.addr }</td>
+			</tr>
+		</c:forEach>
+	</table>
+	
 	
 	</body>
 </html>
