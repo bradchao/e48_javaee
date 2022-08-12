@@ -22,7 +22,7 @@
 			<th>isLast</th>
 		</tr>
 		<c:forEach items="${cust }" var="name" varStatus="status">
-			<tr>
+			<tr bgcolor='${status.index % 2 == 0?"pink":"yellow" }'>
 				<td>${status.index }</td>
 				<td>${name }</td>
 				<td>${status.count }</td>
