@@ -15,8 +15,14 @@
 
 <c:set var="rpp" value="10" />
 <c:set var="pages" value="${rs.rowCount % rpp == 0?rs.rowCount / rpp : (rs.rowCount - (rs.rowCount % rpp)) / rpp + 1 }" />
-${pages }
+<c:set var="page" value="${param.page == null? 1 : param.page }" />
+<c:set var="start" value="${(page -1) * rpp }" />
+<c:set var="prev" value="${page - 1 == 0? 1 : page - 1 }" />
+<c:set var="next" value="${page >= pages? page : page + 1 }" />
 
+<sql:query var="rs1">
+	SELECT * FROM souvenir LIMIT ${start }, ${rpp }
+</sql:query>	
 
 <!DOCTYPE html>
 <html>
@@ -33,7 +39,7 @@ ${pages }
 			<th>Address</th>
 			<th>Image</th>
 		</tr>
-		<c:forEach items="${rs.rows }" var="row">
+		<c:forEach items="${rs1.rows }" var="row">
 			<tr>
 				<td>${row.id }</td>
 				<td>${row.sname }</td>
