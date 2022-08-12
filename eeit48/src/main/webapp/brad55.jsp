@@ -15,11 +15,19 @@
 	
 	<table border="1" width="100%">
 		<tr>
+			<th>index</th>
 			<th>Name</th>
+			<th>count</th>
+			<th>isFirst</th>
+			<th>isLast</th>
 		</tr>
-		<c:forEach items="${cust }" var="name">
+		<c:forEach items="${cust }" var="name" varStatus="status">
 			<tr>
+				<td>${status.index }</td>
 				<td>${name }</td>
+				<td>${status.count }</td>
+				<td>${status.first }</td>
+				<td>${status.last }</td>
 			</tr>
 		</c:forEach>
 	</table>
