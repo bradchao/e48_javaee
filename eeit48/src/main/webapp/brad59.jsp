@@ -5,6 +5,10 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>    
 
 <c:if test="${!empty param.account }">
+	<c:if test="${pageContext.request.method == 'GET' }" >
+		<c:redirect url="brad58.jsp"></c:redirect>
+	</c:if>
+
 	<sql:setDataSource
 		driver="com.mysql.cj.jdbc.Driver"
 		url="jdbc:mysql://localhost:3306/eeit48"
