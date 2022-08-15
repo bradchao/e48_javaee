@@ -31,6 +31,7 @@
 		<title>Brad Big Company</title>
 	</head>
 	<body>
+	<a href="?page=${prev }">Prev</a> | <a href="?page=${next }">Next</a> 
 	<table border="1" width="100%">
 		<tr>
 			<th>ID #</th>
