@@ -65,4 +65,9 @@ public class BradUtils {
 		return (int)(Math.random()*101);
 	}
 	
+	public static String encPasswd(String passwd) {
+		String hashPasswd = BCrypt.hashpw(passwd, BCrypt.gensalt());
+		return hashPasswd;
+	}
+	
 }

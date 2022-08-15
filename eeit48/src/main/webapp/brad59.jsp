@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="tw.brad.eeit48.utils.*" %> 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>    
 
@@ -13,9 +14,10 @@
 	<sql:update>
 		INSERT INTO member (account,passwd,realname) VALUES (?,?,?)
 		<sql:param>${param.account }</sql:param>
-		<sql:param></sql:param>
-		<sql:param>${param.passwd }</sql:param>
+		<sql:param>${BradUtils.encPasswd(param.passwd) }</sql:param>
+		<sql:param>${param.realname }</sql:param>
 	</sql:update>
+	<c:redirect url="brad58.jsp"></c:redirect>
 </c:if>
 
 
