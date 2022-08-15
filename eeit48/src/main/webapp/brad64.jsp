@@ -21,6 +21,11 @@
 		JSONArray root = new JSONArray(dataString);
 		for (int i=0; i< root.length(); i++){
 			JSONObject row = root.getJSONObject(i);
+			HashMap<String,String> food = new HashMap<>();
+			food.put("name", row.getString("Name"));
+			food.put("addr", row.getString("Address"));
+			food.put("tel", row.getString("Tel"));
+			foods.add(food);
 		}
 	
 		pageContext.setAttribute("foodData", foods);
@@ -32,8 +37,12 @@
 			<th>Address</th>
 			<th>Tel</th>
 		</tr>
-		<c:forEach items="${foodData }" var="">
-		
+		<c:forEach items="${foodData }" var="food">
+			<tr>
+				<td>${food.name }</td>
+				<td>${food.addr }</td>
+				<td>${food.tel }</td>
+			</tr>
 		</c:forEach>
 	</table>
 	
