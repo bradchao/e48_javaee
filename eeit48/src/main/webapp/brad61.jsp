@@ -15,7 +15,7 @@
 		<title>Brad Big Company</title>
 	</head>
 	<body>
-	<form action="brad62.jsp">
+	<form action="brad62.jsp" method="post">
 		<input type="text" name="test" />
 		<input type="submit" value="test" />
 	</form>
