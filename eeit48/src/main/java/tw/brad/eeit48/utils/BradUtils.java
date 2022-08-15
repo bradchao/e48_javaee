@@ -70,4 +70,8 @@ public class BradUtils {
 		return hashPasswd;
 	}
 	
+	public static boolean isExistKey(String text, String key) {
+		return text.contains(key);
+	}
+	
 }
