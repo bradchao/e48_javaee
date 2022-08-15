@@ -8,13 +8,24 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
+	String key = request.getParameter("key");
 
 	Class.forName("com.mysql.cj.jdbc.Driver");
 	Connection conn = 
 		DriverManager.getConnection(
 			"jdbc:mysql://localhost/eeit48","root","root");
-	String sql = "SELECT * FROM souvenir LIMIT 3";
-	PreparedStatement pstmt = conn.prepareStatement(sql);
+	String sql;
+	PreparedStatement pstmt;
+	if (key != null){
+		sql = "SELECT * FROM souvenir WHERE sname like ? OR addr like ? OR tel like ?";
+		pstmt = conn.prepareStatement(sql);
+		pstmt.setString(1, "%" + key + "%");
+		pstmt.setString(2, "%" + key + "%");
+		pstmt.setString(3, "%" + key + "%");
+	}else{
+		sql = "SELECT * FROM souvenir";
+		pstmt = conn.prepareStatement(sql);
+	}
 	ResultSet rs = pstmt.executeQuery();
 	
 	JSONArray root = new JSONArray();
@@ -25,7 +36,7 @@
 		obj.put("addr", rs.getString("addr"));
 		root.put(obj);
 	}
-	out.print(root.toString());
+	out.print(root.toString().trim());
 	
 
 %>
