@@ -12,7 +12,7 @@
 		Member member = new Member();
 		member.setId(1); member.setAccount("brad"); member.setRealname("Brad Chao");
 		
-		session.setMaxInactiveInterval(30);
+		session.setMaxInactiveInterval(10);
 		session.setAttribute("member", member);
 		response.sendRedirect("brad75.jsp");
 	}else{
