@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib tagdir="/WEB-INF/tags" prefix="brad" %>
 <!DOCTYPE html>
 <html>
@@ -16,7 +15,13 @@
 	<brad:test2 />
 	<hr />
 	<brad:sayHello who="Brad" />
-	
+	<hr />
+	<brad:calc x="${param.x }" y="${param.y }">
+		${param.x } + ${param.y } = ${add }<br />
+		${param.x } - ${param.y } = ${sub }<br />
+		${param.x } x ${param.y } = ${multi }<br />
+		${param.x } / ${param.y } = ${devide }<br />
+	</brad:calc>
 	
 	</body>
 </html>
