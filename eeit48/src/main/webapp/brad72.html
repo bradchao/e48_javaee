@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<script>
+	var xhttp = new XMLHttpRequest();
+	
+	function task(){
+		xhttp.onreadystatechange = function(){
+			if (xhttp.readyState == 4 && xhttp.status == 200){
+				var dataView = document.getElementById('data');
+				dataView.innerHTML = xhttp.responseText;
+			}
+		};
+		
+		// Send a request
+		xhttp.open("GET", "brad71.jsp?id=1");
+		xhttp.send();
+	}
+	
+	setInterval(task, 1*1000);
+
+</script>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+	<body>
+		<h1>Brad Big Company</h1>
+		<hr />
+		<div id="data"></div>
+	</body>
+</html>
